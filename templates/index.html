@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Api prediction</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  
+</head>
+
+
+<body>
+  <body style="background-color:#FFA420;">
+
+ <div class="Ahorratec-Centro">
+                        <a href="#inicio"><img width="150" src="macal.jpg" class="img-responsive" alt="Logo Macal" title="macal.cl" /></a> 
+                    </div>
+
+<div class="container">
+<font color=#686868>
+  <h2>Predicción monto Departamentos RM V 1.0</h2>
+        <h6>Nota: El modelo funciona mejor entre los rangos 20 M hasta 160 M, ingresar todas las variables</h6>
+     
+</font>
+
+        
+        <div class="row">
+            <div class="col-md-4">
+
+
+
+     <!-- Main Input For Receiving Query to our ML -->
+         <form action="{{ url_for('predict')}}"method="post">
+          
+          <label for="pk">Comuna </label>
+
+              <select name="comuna" id="comuna" >
+
+               <option>Buin</option>
+              <option>Calera de Tango</option>
+              <option>Cerrillos</option>
+              <option>Cerro Navia</option>
+              <option>Colina</option>
+              <option>Conchalí</option>
+              <option>El Bosque</option>
+              <option>El Monte</option>
+              <option>Estación Central</option>
+              <option>Huechuraba</option>
+              <option>Independencia</option>
+              <option>Isla de Maipo</option>
+              <option>La Cisterna</option>
+              <option>La Florida</option>
+              <option>La Granja</option>
+              <option>La Pintana</option>
+              <option>La Reina</option>
+              <option>Lampa</option>
+              <option>Las Condes</option>
+              <option>Lo Barnechea</option>
+              <option>Lo Espejo</option>
+              <option>Lo Prado</option>
+              <option>Macul</option>
+              <option>Maipú</option>
+              <option>Ñuñoa</option>
+              <option>Padre Hurtado</option>
+              <option>Paine</option>
+              <option>Pedro Aguirre Cerda</option>
+              <option>Peñaflor</option>
+              <option>Peñalolén</option>
+              <option>Pirque</option>
+              <option>Providencia</option>
+              <option>Pudahuel</option>
+              <option>Puente Alto</option>
+              <option>Quilicura</option>
+              <option>Quinta Normal</option>
+              <option>Recoleta</option>
+              <option>Renca</option>
+              <option>San Bernardo</option>
+              <option>San Joaquín</option>
+              <option>San José de Maipo</option>
+              <option>San Miguel</option>
+              <option>San Ramón</option>
+              <option>Santiago</option>
+              <option>Talagante</option>
+              <option>Vitacura</option>
+
+
+              </select>
+
+
+
+                    <p>
+                        
+                 
+                        <label for="nombre">Cantidad Dormitorios</label>
+                        <input type="number" name="dormitorios" required="required" />
+            
+                        <label for="nombre">Cantidad Baños</label>
+                        <input type="number" name="banos" required="required" />
+                         
+                         <label for="nombre">Superficie construida(m^2) </label>
+                        <input type="number" name="metros" required="required" />
+
+                        
+
+
+                        
+                        <label for="nombre">Tiene Bodega? </label>
+                        <select name="bodega" id="bodega">
+
+                            <option>SI</option>
+                            <option>NO</option>
+                        </select>
+
+                        <label for="nombre">Tiene Estacionamiento? </label>
+                        <select name="estacionamiento" id="estacionamiento">
+
+                            <option>SI</option>
+                            <option>NO</option>
+                        </select>
+                        <p>  
+                        <label for="nombre">Esta ocupada? </label>
+                        <select name="ocupacion" id="ocupacion">
+
+                            <option>SI</option>
+                            <option>NO</option>
+                        </select>
+                        </p>
+
+                         <label for="nombre">Es próximo al metro? </label>
+                        <select name="metro" id="metro">
+
+                            <option>SI</option>
+                            <option>NO</option>
+                        </select>
+                         
+                        <label for="nombre">El edificio tiene piscina? </label>
+                        <select name="piscina" id="piscina">
+
+                            <option>SI</option>
+                            <option>NO</option>
+                        </select>
+                        
+                        <label for="nombre">El departamento tiene Loggia? </label>
+                        <select name="loggia" id="loggia">
+
+                            <option>SI</option>
+                            <option>NO</option>
+                        </select>
+                       
+                    
+                        <button type="submit"  class="btn btn-primary btn-block btn-large">Predecir</button>
+                 
+                    
+                 
+                </form>
+<h4> {{ prediction_text }}   </h4>
+  
+   
+
+ </div>
+
+
+</body>
+</html>
