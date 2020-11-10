@@ -16,7 +16,7 @@
   <body style="background-color:#FFA420;">
 
  <div class="Ahorratec-Centro">
-                        <a href="#inicio"><img width="150" src="macal.jpg" class="img-responsive" alt="Logo Macal" title="macal.cl" /></a> 
+                        <a href="#inicio"><img width="150" src="{{url_for('static', filename='macal.jpg')}}" class="img-responsive" alt="Logo Macal" title="macal.cl" /></a> 
                     </div>
 
 <div class="container">
@@ -100,14 +100,14 @@
                         <label for="nombre">Cantidad Baños</label>
                         <input type="number" name="banos" required="required" />
                          
-                         <label for="nombre">Superficie construida(m^2) </label>
+                         <label for="nombre"> m^2 construidos </label>
                         <input type="number" name="metros" required="required" />
 
                         
 
 
                         
-                        <label for="nombre">Tiene Bodega? </label>
+                        <label for="nombre">Incorpora una Bodega? </label>
                         <select name="bodega" id="bodega">
 
                             <option>SI</option>
@@ -120,14 +120,14 @@
                             <option>SI</option>
                             <option>NO</option>
                         </select>
-                        <p>  
-                        <label for="nombre">Esta ocupada? </label>
+                       
+                        <label for="nombre">El depto esta ocupado? </label>
                         <select name="ocupacion" id="ocupacion">
 
                             <option>SI</option>
                             <option>NO</option>
                         </select>
-                        </p>
+                      
 
                          <label for="nombre">Es próximo al metro? </label>
                         <select name="metro" id="metro">
